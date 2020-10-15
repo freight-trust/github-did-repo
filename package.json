@@ -18,5 +18,6 @@
     "hooks": {
       "pre-push": "echo 'linting is currenty off'"
     }
-  }
+  },
+  "version": "0.0.6"
 }
