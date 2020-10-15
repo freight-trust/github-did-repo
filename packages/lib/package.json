@@ -1,5 +1,5 @@
 {
-  "name": "@github-did/lib",
+  "name": "github-did-library",
   "version": "0.0.5",
   "description": "GitHub DID Library",
   "main": "./src/index.js",
@@ -21,7 +21,7 @@
     "@transmute/openpgpsignature2019": "^0.1.1",
     "@transmute/rsasignature2017": "^0.1.0",
     "crypto-ld": "^3.7.0",
-    "did-method-key": "^0.2.0",
+    "did-method-key": "^0.7.0",
     "jsonld-signatures": "^4.4.0",
     "jsonwebtoken": "^8.5.0",
     "moment": "^2.24.0",
