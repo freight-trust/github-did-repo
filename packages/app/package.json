@@ -5,13 +5,13 @@
   "homepage": "https://github-did.com",
   "license": "Apache-2.0",
   "dependencies": {
-    "@github-did/lib": "^0.0.5",
     "@material-ui/core": "^3.8.3",
     "@material-ui/icons": "^3.0.2",
     "axios": "^0.18.0",
     "base64url": "^3.0.1",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.2.1",
+    "github-did-library-web3": "^0.0.7",
     "history": "^4.7.2",
     "lodash": "^4.17.4",
     "material-auto-rotating-carousel": "^3.0.1",
@@ -53,6 +53,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "firebase-tools": "^7.7.0"
+    "firebase-tools": "^7.7.0",
+    "immutable": "^3.8.1",
+    "seamless-immutable": "^7.1.3"
   }
 }

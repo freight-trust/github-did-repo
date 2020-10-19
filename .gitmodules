@@ -1,0 +1,3 @@
+[submodule "packages/x25519-key-pair"]
+	path = packages/x25519-key-pair
+	url = https://github.com/digitalbazaar/x25519-key-pair.git
