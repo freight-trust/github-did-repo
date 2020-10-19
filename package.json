@@ -20,5 +20,5 @@
       "pre-push": "echo 'linting is currenty off'"
     }
   },
-  "version": "0.0.7"
+  "version": "0.0.8"
 }
