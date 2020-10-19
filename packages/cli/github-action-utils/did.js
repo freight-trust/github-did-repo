@@ -1,4 +1,4 @@
-const ghdid = require('@github-did/lib');
+const ghdid = require('github-did-library-web3');
 const fs = require('fs');
 const jsigs = require('jsonld-signatures');
 const { Ed25519Signature2018 } = jsigs.suites;
