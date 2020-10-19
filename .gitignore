@@ -1,3 +1,5 @@
+*.tgz
+public/
 node_modules
 .firebase
 *.debug.log
