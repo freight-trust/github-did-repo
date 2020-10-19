@@ -1,4 +1,4 @@
-# @github-did/cli
+# gh-did-cli-web3
 
 A command line interface for working with Github DIDs.
 
