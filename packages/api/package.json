@@ -1,8 +1,7 @@
 {
-  "name": "@github-did/api",
-  "version": "0.0.5",
+  "name": "github-did-api-web3",
+  "version": "0.0.6",
   "description": "Cloud Functions for GitHub DID",
-  "author": "Orie Steele",
   "license": "Apache-2.0",
   "scripts": {
     "test": "jest --coverage",
@@ -24,10 +23,7 @@
     "swagger-ui-express": "^4.0.2",
     "winston": "^3.1.0"
   },
-  "private": true,
-  "engines": {
-    "node": "8"
-  },
+  "private": false,
   "devDependencies": {
     "eslint": "^5.10.0",
     "eslint-config-airbnb-base": "^13.1.0",

@@ -1,7 +1,7 @@
 {
-  "name": "@github-did/app",
-  "version": "0.0.5",
-  "private": true,
+  "name": "github-did-app-web3",
+  "version": "0.0.6",
+  "private": false,
   "homepage": "https://github-did.com",
   "license": "Apache-2.0",
   "dependencies": {
