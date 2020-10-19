@@ -13,9 +13,7 @@ import 'brace/theme/github';
 
 import FormControl from '@material-ui/core/FormControl';
 
-import {
-  Button, Typography, Grid, TextField,
-} from '@material-ui/core';
+import { Button, Typography, Grid, TextField } from '@material-ui/core';
 import { DisplayPayloadDialog } from '../index';
 
 const base64url = require('base64url');
@@ -63,7 +61,10 @@ class DIDDecrypter extends Component {
 
   render() {
     const {
-      jsonEditorValue, jsonPayload, decryptedData, isDisplayPayloadOpen,
+      jsonEditorValue,
+      jsonPayload,
+      decryptedData,
+      isDisplayPayloadOpen,
     } = this.state;
 
     const Header = () => <Typography variant="h5">Decrypt Payload</Typography>;
@@ -73,7 +74,10 @@ class DIDDecrypter extends Component {
         <Header />
         <br />
 
-        <DisplayPayloadDialog open={isDisplayPayloadOpen} jsonData={decryptedData} />
+        <DisplayPayloadDialog
+          open={isDisplayPayloadOpen}
+          jsonData={decryptedData}
+        />
 
         <Grid container spacing={24}>
           <Grid item xs={8}>
@@ -90,7 +94,11 @@ class DIDDecrypter extends Component {
           <Grid item xs={4}>
             <form noValidate autoComplete="off">
               <FormControl fullWidth>
-                <Button variant="contained" color={'primary'} onClick={this.handleDecrypt}>
+                <Button
+                  variant="contained"
+                  color={'primary'}
+                  onClick={this.handleDecrypt}
+                >
                   Decrypt
                 </Button>
               </FormControl>

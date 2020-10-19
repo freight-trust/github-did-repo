@@ -32,11 +32,11 @@ class Landing extends Component {
       });
     };
     /*eslint-disable */
-    (function() {
-      const throttle = function(type, name, obj) {
+    (function () {
+      const throttle = function (type, name, obj) {
         obj = obj || window;
         let running = false;
-        const func = function() {
+        const func = function () {
           if (running) {
             return;
           }
@@ -96,12 +96,18 @@ class Landing extends Component {
           <Button
             variant="contained"
             onClick={() => {
-              window.open('https://github.com/decentralized-identity/github-did');
+              window.open(
+                'https://github.com/decentralized-identity/github-did'
+              );
             }}
           >
             Read More on Github.com
           </Button>{' '}
-          <Button variant="contained" color={'primary'} onClick={this.handleStartTour}>
+          <Button
+            variant="contained"
+            color={'primary'}
+            onClick={this.handleStartTour}
+          >
             Start Tour
           </Button>
         </div>
@@ -113,13 +119,18 @@ class Landing extends Component {
 
         <Typography variant="body1">
           First, go to{' '}
-          <a href="https://github.com/new" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/new"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             github.com
           </a>{' '}
           and create a new public repository called `ghdid`.
         </Typography>
         <Typography variant="body1">
-          When complete you should end on a page like: https://github.com/USERNAME/ghdid
+          When complete you should end on a page like:
+          https://github.com/USERNAME/ghdid
         </Typography>
 
         <br />
@@ -146,7 +157,8 @@ ghdid init "my-password" https://github.com/USERNAME/ghdid --force
         <br />
 
         <Typography variant="body1">
-          Head over to the wallet page to import your web wallet and continue the demo.
+          Head over to the wallet page to import your web wallet and continue
+          the demo.
         </Typography>
         <br />
         <Button
@@ -171,14 +183,20 @@ ghdid init "my-password" https://github.com/USERNAME/ghdid --force
         >
           <Slide
             media={<img src="/cys/png/011-data.png" alt="data" />}
-            mediaBackgroundStyle={{ backgroundColor: purple[400], padding: '32px' }}
+            mediaBackgroundStyle={{
+              backgroundColor: purple[400],
+              padding: '32px',
+            }}
             style={{ backgroundColor: purple[600] }}
             title="Open Source Library"
             subtitle="Modular JavaScript library for working with Decentralized Identities and Verifiable Credentials."
           />
           <Slide
             media={<img src="/cys/png/039-id.png" alt="id" />}
-            mediaBackgroundStyle={{ backgroundColor: deepPurple[400], padding: '32px' }}
+            mediaBackgroundStyle={{
+              backgroundColor: deepPurple[400],
+              padding: '32px',
+            }}
             style={{ backgroundColor: deepPurple[600] }}
             title="Progressive Web App"
             subtitle="Modern, extensible and friendly interface for reviewing identities, credentials and attestations."
@@ -192,7 +210,10 @@ ghdid init "my-password" https://github.com/USERNAME/ghdid --force
           />
           <Slide
             media={<img src="/cys/png/036-server.png" alt="server" />}
-            mediaBackgroundStyle={{ backgroundColor: indigo[400], padding: '32px' }}
+            mediaBackgroundStyle={{
+              backgroundColor: indigo[400],
+              padding: '32px',
+            }}
             style={{ backgroundColor: indigo[600] }}
             title="Serverless Backend"
             subtitle="Cloud Function powerd REST API built with Swagger and JSON Schema."
@@ -208,7 +229,10 @@ ghdid init "my-password" https://github.com/USERNAME/ghdid --force
 
           <Slide
             media={<img src="/mgmt/png/chatting.png" alt="chatting" />}
-            mediaBackgroundStyle={{ backgroundColor: red[400], padding: '32px' }}
+            mediaBackgroundStyle={{
+              backgroundColor: red[400],
+              padding: '32px',
+            }}
             style={{ backgroundColor: red[600] }}
             title="Research & Development"
             subtitle="Perfect for collaborating and testing new signature suites or credential flows."
@@ -216,7 +240,10 @@ ghdid init "my-password" https://github.com/USERNAME/ghdid --force
 
           <Slide
             media={<img src="/cys/png/031-network.png" alt="network" />}
-            mediaBackgroundStyle={{ backgroundColor: deepPurple[400], padding: '32px' }}
+            mediaBackgroundStyle={{
+              backgroundColor: deepPurple[400],
+              padding: '32px',
+            }}
             style={{ backgroundColor: deepPurple[600] }}
             title="Authenticated Encryption"
             subtitle="Leverage DID Documents for private communication over insecure channels."
@@ -224,7 +251,10 @@ ghdid init "my-password" https://github.com/USERNAME/ghdid --force
 
           <Slide
             media={<img src="/mgmt/png/agreement.png" alt="agreement" />}
-            mediaBackgroundStyle={{ backgroundColor: green[400], padding: '32px' }}
+            mediaBackgroundStyle={{
+              backgroundColor: green[400],
+              padding: '32px',
+            }}
             style={{ backgroundColor: green[600] }}
             title="Verifiable Credentials"
             subtitle="Decentralized Identity powerd verifiable credentials built with JSON-LD and modular signature suites."
@@ -232,7 +262,10 @@ ghdid init "my-password" https://github.com/USERNAME/ghdid --force
 
           <Slide
             media={<img src="/cys/png/050-alarm.png" alt="alarm" />}
-            mediaBackgroundStyle={{ backgroundColor: grey[700], padding: '32px' }}
+            mediaBackgroundStyle={{
+              backgroundColor: grey[700],
+              padding: '32px',
+            }}
             style={{ backgroundColor: grey[800] }}
             title="Under Construction!"
             subtitle="GitHub DID is experimental, be careful and have fun!"

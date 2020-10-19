@@ -1,40 +1,40 @@
-const os = require("os");
-const path = require("path");
-const shell = require("shelljs");
-const fse = require("fs-extra");
+const os = require('os');
+const path = require('path');
+const shell = require('shelljs');
+const fse = require('fs-extra');
 
-const ghdid = require("@github-did/lib");
+const ghdid = require('@github-did/lib');
 
-module.exports = vorpal => {
+module.exports = (vorpal) => {
   const {
     logger,
     packageJson,
     configPath,
     walletFilePath,
     webWalletFilePath,
-    logPath
+    logPath,
   } = vorpal;
   const { version } = packageJson;
   vorpal
-    .command("init <password> <targetRepo>", "initialize github-did")
-    .option("-f, --force", "Force init, overwriting existing data.")
+    .command('init <password> <targetRepo>', 'initialize github-did')
+    .option('-f, --force', 'Force init, overwriting existing data.')
     .action(async ({ password, targetRepo, options }) => {
       // console.log(options);
       const repoUrl = targetRepo;
       if (vorpal.config && !options.force) {
         logger.log({
-          level: "info",
-          message: `Config exists ${configPath}`
+          level: 'info',
+          message: `Config exists ${configPath}`,
         });
       } else {
         // Clone the github-did repo from the specified url
         const [user, repo] = repoUrl
           .split(/github.com./)[1]
-          .split(".git")[0]
-          .split("/");
+          .split('.git')[0]
+          .split('/');
         const gitUrl = `git@github.com:${user}/${repo}.git`;
         const cwd = process.cwd();
-        const repoPath = path.resolve(os.homedir(), ".github-did", repo);
+        const repoPath = path.resolve(os.homedir(), '.github-did', repo);
         // Check for existing ghdid repo
         let cmd = `cd ${repoPath} && git pull`;
         const existingResult = shell.exec(cmd, { silent: true });
@@ -46,8 +46,8 @@ module.exports = vorpal => {
           const cloneResult = shell.exec(cmd, { silent: true });
           if (cloneResult.code !== 0) {
             await vorpal.logger.log({
-              level: "error",
-              message: `Command failed: ${cmd}:\n${cloneResult.stderr}`
+              level: 'error',
+              message: `Command failed: ${cmd}:\n${cloneResult.stderr}`,
             });
 
             error = true;
@@ -66,62 +66,62 @@ module.exports = vorpal => {
         let wallet = ghdid.createWallet();
 
         const key1 = await ghdid.createKeypair({
-          userIds: [{ name: "anon", email: "anon@example.com" }],
-          curve: "secp256k1"
+          userIds: [{ name: 'anon', email: 'anon@example.com' }],
+          curve: 'secp256k1',
         });
 
         const key2 = await ghdid.createKeypair({
-          userIds: [{ name: "anon", email: "anon@example.com" }],
-          curve: "secp256k1"
+          userIds: [{ name: 'anon', email: 'anon@example.com' }],
+          curve: 'secp256k1',
         });
 
         wallet = ghdid.addKeyToWallet(wallet, {
-          type: "assymetric",
-          encoding: "application/pgp-keys",
+          type: 'assymetric',
+          encoding: 'application/pgp-keys',
           publicKey: key1.publicKeyArmored,
           privateKey: key1.privateKeyArmored,
           revocationCertificate: key1.revocationCertificate,
           tags: [
-            "Secp256k1VerificationKey2018",
+            'Secp256k1VerificationKey2018',
             `did:github:${user}`,
-            "OpenPGP"
+            'OpenPGP',
           ],
-          notes: "Created with github-did cli."
+          notes: 'Created with github-did cli.',
         });
 
         wallet = ghdid.addKeyToWallet(wallet, {
-          type: "assymetric",
-          encoding: "application/pgp-keys",
+          type: 'assymetric',
+          encoding: 'application/pgp-keys',
           publicKey: key2.publicKeyArmored,
           privateKey: key2.privateKeyArmored,
           revocationCertificate: key2.revocationCertificate,
           tags: [
-            "Secp256k1VerificationKey2018",
+            'Secp256k1VerificationKey2018',
             `did:github:${user}`,
-            "OpenPGP",
-            "web"
+            'OpenPGP',
+            'web',
           ],
-          notes: "Created with github-did cli."
+          notes: 'Created with github-did cli.',
         });
 
         const ed25519Key = await ghdid.createDIDKeyKeypair();
 
         wallet = ghdid.addKeyToWallet(wallet, {
-          type: "assymetric",
-          encoding: "base58",
-          didPublicKeyEncoding: "publicKeyBase58",
+          type: 'assymetric',
+          encoding: 'base58',
+          didPublicKeyEncoding: 'publicKeyBase58',
           publicKey: ed25519Key.publicKeyBase58,
           privateKey: ed25519Key.privateKeyBase58,
           tags: [
-            "Ed25519VerificationKey2018",
+            'Ed25519VerificationKey2018',
             `did:github:${user}`,
             ed25519Key.didDocument.id,
-            "web"
+            'web',
           ],
-          notes: ""
+          notes: '',
         });
 
-        const rootDIDPath = path.resolve(repoPath, "index.jsonld");
+        const rootDIDPath = path.resolve(repoPath, 'index.jsonld');
         // Setup Github Action directory
         const gaDir = `${repoPath}/.github/workflows`;
         [`${repoPath}/.github`, gaDir, `${gaDir}/utils`].forEach((dir) => {
@@ -132,9 +132,9 @@ module.exports = vorpal => {
         const files = require('../../github-action-utils');
         Object.entries(files).forEach(([fileName, content]) => {
           if (fileName === 'did.yml') {
-            fse.writeFileSync(`${gaDir}/${fileName}`, content)
+            fse.writeFileSync(`${gaDir}/${fileName}`, content);
           } else {
-            fse.writeFileSync(`${gaDir}/utils/${fileName}`, content)
+            fse.writeFileSync(`${gaDir}/utils/${fileName}`, content);
           }
         });
 
@@ -146,7 +146,7 @@ module.exports = vorpal => {
             id: `did:github:${user}`,
             publicKey: [],
             service: [],
-            authentication: []
+            authentication: [],
           });
           await fse.outputFile(rootDIDPath, JSON.stringify(doc, null, 2));
           cmd = `
@@ -161,17 +161,17 @@ module.exports = vorpal => {
           `;
           shell.exec(cmd, { silent: true });
           await vorpal.logger.log({
-            level: "info",
-            message: `Create and publish did:github:${user} with github-did cli.`
+            level: 'info',
+            message: `Create and publish did:github:${user} with github-did cli.`,
           });
         } else {
           await vorpal.logger.log({
-            level: "info",
-            message: `did:github:${user} already exists. Overwrite it with --force.`
+            level: 'info',
+            message: `did:github:${user} already exists. Overwrite it with --force.`,
           });
         }
 
-        const webKeys = wallet.extractByTags(["web"]);
+        const webKeys = wallet.extractByTags(['web']);
         const webWallet = ghdid.createWallet({ keys: webKeys });
 
         webWallet.lock(password);
@@ -186,12 +186,12 @@ module.exports = vorpal => {
           configPath,
           JSON.stringify(
             {
-              name: "github-did-config",
+              name: 'github-did-config',
               version,
               wallet: walletFilePath,
               webWallet: webWalletFilePath,
               logs: logPath,
-              repoUrl
+              repoUrl,
             },
             null,
             2
@@ -199,8 +199,8 @@ module.exports = vorpal => {
         );
 
         await vorpal.logger.log({
-          level: "info",
-          message: `Config created ${configPath}`
+          level: 'info',
+          message: `Config created ${configPath}`,
         });
       }
       return vorpal.wait(1);

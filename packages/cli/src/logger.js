@@ -3,9 +3,7 @@ const path = require('path');
 const winston = require('winston');
 
 const { createLogger, format, transports } = winston;
-const {
-  combine, timestamp, label, colorize, json, printf,
-} = format;
+const { combine, timestamp, label, colorize, json, printf } = format;
 
 const logPath = path.resolve(os.homedir(), '.github-did', 'log.json');
 
@@ -15,7 +13,7 @@ const logger = createLogger({
     format.timestamp({
       format: 'YYYY-MM-DD HH:mm:ss',
     }),
-    json(),
+    json()
   ),
 
   transports: [
@@ -25,7 +23,6 @@ const logger = createLogger({
   ],
 });
 
-
 if (process.env.NODE_ENV !== 'production') {
   logger.add(
     new transports.Console({
@@ -33,11 +30,12 @@ if (process.env.NODE_ENV !== 'production') {
         colorize(),
         label({ label: 'console' }),
         timestamp(),
-        printf(info => `${info.timestamp} [${info.label}] ${info.level}: ${
-          info.message
-        }`),
+        printf(
+          (info) =>
+            `${info.timestamp} [${info.label}] ${info.level}: ${info.message}`
+        )
       ),
-    }),
+    })
   );
 }
 

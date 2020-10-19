@@ -1,5 +1,5 @@
 const firebaseFunctions = require('firebase-functions');
 
 module.exports = {
-  functions: firebaseFunctions
+  functions: firebaseFunctions,
 };

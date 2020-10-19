@@ -4,6 +4,6 @@ export const didResolved = createAction('DID/RESOLVED', ({ didDocument }) => ({
   didDocument,
 }));
 
-export const set = createAction('DID/SET', payload => ({
+export const set = createAction('DID/SET', (payload) => ({
   ...payload,
 }));

@@ -1,7 +1,7 @@
 ---
 title: Using the ghdid cli
-date: "2019-04-29T22:12:03.284Z"
-image: "/imgs/micro_2_1.jpg"
+date: '2019-04-29T22:12:03.284Z'
+image: '/imgs/micro_2_1.jpg'
 ---
 
 In this tutorial, we'll walk you through how to set up a GitHub DID using the CLI and a local wallet to manage keys.

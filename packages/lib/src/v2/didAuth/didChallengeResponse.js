@@ -1,34 +1,32 @@
-const crypto = require("crypto");
-const moment = require("moment");
-const jwt = require("jsonwebtoken");
+const crypto = require('crypto');
+const moment = require('moment');
+const jwt = require('jsonwebtoken');
 
 const generateChallenge = () => {
   return {
-    nonce: crypto.randomBytes(32).toString("hex"),
-    expires: moment()
-      .add(1, "hour")
-      .toISOString()
+    nonce: crypto.randomBytes(32).toString('hex'),
+    expires: moment().add(1, 'hour').toISOString(),
   };
 };
 
 const validateToken = async (token, publicKey) => {
   let decoded = jwt.decode(token, { complete: true });
   return jwt.verify(token, publicKey, {
-    algorithm: decoded.header.alg
+    algorithm: decoded.header.alg,
   });
 };
 
 const validateSignature = async (doc, publicKey, ldSignatureSuites) => {
   const proof = doc.proof || doc.signature;
   if (!proof) {
-    throw new Error("JSON-LD Signature is not spec compliant.");
+    throw new Error('JSON-LD Signature is not spec compliant.');
   }
   if (!ldSignatureSuites[proof.type]) {
-    throw new Error("JSON-LD Signature Suite not available.");
+    throw new Error('JSON-LD Signature Suite not available.');
   }
   const isSignatureValid = await ldSignatureSuites[proof.type].verify({
     data: doc,
-    publicKey: publicKey
+    publicKey: publicKey,
   });
 
   return isSignatureValid;
@@ -44,7 +42,7 @@ const verifySignedChallenge = async (
   let challengerSignatureIsValid = false;
   let responderSignatureIsValid = false;
 
-  if (typeof tokenOrDoc === "string") {
+  if (typeof tokenOrDoc === 'string') {
     let decoded = await validateToken(tokenOrDoc, responderPublicKey);
     responderSignatureIsValid = !!decoded;
     decoded = await validateToken(
@@ -83,5 +81,5 @@ const verifySignedChallenge = async (
 
 module.exports = {
   verifySignedChallenge,
-  generateChallenge
+  generateChallenge,
 };

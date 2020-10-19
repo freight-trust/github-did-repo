@@ -1,7 +1,7 @@
 ---
 title: Getting Started
-date: "2019-04-29T22:12:03.284Z"
-image: "/imgs/micro_0.jpg"
+date: '2019-04-29T22:12:03.284Z'
+image: '/imgs/micro_0.jpg'
 ---
 
 In this tutorial, we'll walk you through how GitHub DID works.
@@ -12,16 +12,15 @@ At the core a DID is the `method`. its the process that helps resolve the identi
 
 GitHub DID is experimental and supports a couple different formats for methods.
 
-
 ### Username DIDs
 
-They look like this (Case Sensitive): 
+They look like this (Case Sensitive):
 
 ```
 did:github:OR13
 ```
 
-The resolver knows to convert this string to this url: 
+The resolver knows to convert this string to this url:
 
 ```
 https://raw.githubusercontent.com/OR13/ghdid/master/index.jsonld
@@ -43,4 +42,4 @@ Private keys associated with public keys listed in a document can be managed by 
 
 You should now understand how to create a GitHub DID, using Github.com's built in UI and the examples provided
 
-To learn how to use github-did's custom test wallet and cli to manage keys, and create documents, head over to the [using the cli](/using-the-cli/) 
+To learn how to use github-did's custom test wallet and cli to manage keys, and create documents, head over to the [using the cli](/using-the-cli/)

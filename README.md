@@ -12,14 +12,11 @@
 
 #### ^ This means don't trust signatures, messages or software related to this project AND don't import keys that are used for anything else.
 
-
 ## Fork for fixing issues with the following packages, which have been renamed and are on **npm**
 
 github-did-library@0.0.5
 
 github-did-cli@0.0.5
-
-
 
 [![GitHub DID](./Logo.png)](https://github-did.com)
 
@@ -77,12 +74,12 @@ Your DID Document will be:
 
 It will be commited and push automatically by `init`.
 
-
 ## Using the auto signer Github Action
 
 The auto signer Github action will check the `proof` property of the did document for every commit on `master`, verify the validity of the signature, and automatically commit a valid `proof` property if necessary.
 
 In order to use it, you need to set your wallet and password in the Github secrets of your repo: Settings -> Secrets Add a new secret and add two secrets:
+
 - DID_WALLET: `cat ~/.github-did/web.wallet.enc | pbcopy` in order to copy the valud
 - DID_WALLET_PASSWORD: the password you passed in the init command
 
@@ -105,18 +102,18 @@ A DID Resolver is a simple async function which takes a DID and returns a promis
 This one works, by converting the DID to a path in a git repo and then requesting the json-ld document at that path.
 
 ```js
-const didToDIDDocumentURL = did => {
-  const [_, method, identifier] = did.split(":");
-  if (_ !== "did") {
-    throw new Error("Invalid DID");
+const didToDIDDocumentURL = (did) => {
+  const [_, method, identifier] = did.split(':');
+  if (_ !== 'did') {
+    throw new Error('Invalid DID');
   }
-  if (method !== "github") {
-    throw new Error("Invalid DID, should look like did:github:USERNAME");
+  if (method !== 'github') {
+    throw new Error('Invalid DID, should look like did:github:USERNAME');
   }
 
-  if (method === "github") {
-    const base = "https://raw.githubusercontent.com/";
-    const didRepoDir = "/master/index.jsonld";
+  if (method === 'github') {
+    const base = 'https://raw.githubusercontent.com/';
+    const didRepoDir = '/master/index.jsonld';
     const url = `${base}${identifier}/ghdid${didRepoDir}`;
     return url;
   }

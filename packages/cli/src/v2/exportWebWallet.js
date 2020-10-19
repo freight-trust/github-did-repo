@@ -4,7 +4,10 @@ module.exports = (vorpal) => {
   const { webWalletFilePath } = vorpal;
 
   vorpal
-    .command('exportWebWallet <targetFilePath>', 'export your github-did web wallet')
+    .command(
+      'exportWebWallet <targetFilePath>',
+      'export your github-did web wallet'
+    )
 
     .action(async ({ targetFilePath, options }) => {
       if (vorpal.config && !options.force) {

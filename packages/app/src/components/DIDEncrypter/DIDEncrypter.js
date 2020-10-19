@@ -52,12 +52,16 @@ class DIDEncrypter extends Component {
             givenName: 'Alice',
           },
           null,
-          2,
+          2
         ),
       });
     } else {
       this.setState({
-        jsonEditorValue: JSON.stringify(JSON.parse(base64url.decode(payload)), null, 2),
+        jsonEditorValue: JSON.stringify(
+          JSON.parse(base64url.decode(payload)),
+          null,
+          2
+        ),
       });
     }
   }
@@ -84,14 +88,19 @@ class DIDEncrypter extends Component {
 
     const Header = () => {
       if (data.keys === undefined) {
-        return <Typography variant="h5">You must unlock a wallet to encrypt.</Typography>;
+        return (
+          <Typography variant="h5">
+            You must unlock a wallet to encrypt.
+          </Typography>
+        );
       }
       return (
         <div>
           <Typography variant="h5">Encrypt Payload</Typography>
           <Typography variant="body1">
-            Use the Resolver, copy your second public key id and past it into from. Do the same for
-            to. You can use your own public key id for both as well.
+            Use the Resolver, copy your second public key id and past it into
+            from. Do the same for to. You can use your own public key id for
+            both as well.
           </Typography>
         </div>
       );
@@ -122,7 +131,11 @@ class DIDEncrypter extends Component {
           <Grid item xs={4}>
             <form noValidate autoComplete="off">
               <FormControl fullWidth>
-                <Button variant="contained" color={'primary'} onClick={this.handleEncrypt}>
+                <Button
+                  variant="contained"
+                  color={'primary'}
+                  onClick={this.handleEncrypt}
+                >
                   Encrypt
                 </Button>
               </FormControl>

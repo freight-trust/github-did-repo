@@ -27,7 +27,7 @@ import {
   // FormGroup,
   // FormControlLabel,
   // Switch,
-  TextField
+  TextField,
   // Chip,
 } from '@material-ui/core';
 // import { namedWhitelist } from '../../constants';
@@ -39,7 +39,7 @@ class DIDSigner extends Component {
     jsonEditorValue: '',
     labelWidth: 0,
     kid: '',
-    did: ''
+    did: '',
   };
 
   componentWillMount() {
@@ -47,7 +47,7 @@ class DIDSigner extends Component {
 
     if (wallet.data.keys) {
       this.setState({
-        kid: Object.keys(wallet.data.keys)[0]
+        kid: Object.keys(wallet.data.keys)[0],
       });
     }
 
@@ -59,14 +59,14 @@ class DIDSigner extends Component {
               'https://w3id.org/did/v1',
               {
                 schema: 'http://schema.org/',
-                action: 'schema:action'
-              }
+                action: 'schema:action',
+              },
             ],
-            action: 'AuthenticateMe'
+            action: 'AuthenticateMe',
           },
           null,
           2
-        )
+        ),
       });
     } else {
       this.setState({
@@ -74,7 +74,7 @@ class DIDSigner extends Component {
           JSON.parse(base64url.decode(payload)),
           null,
           2
-        )
+        ),
       });
     }
   }
@@ -91,14 +91,14 @@ class DIDSigner extends Component {
     this.props.sign({
       payload: JSON.parse(jsonEditorValue),
       did,
-      kid
+      kid,
     });
   };
 
   componentDidMount() {
     this.setState({
       // eslint-disable-next-line
-      labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
+      labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
     });
   }
 
@@ -129,9 +129,9 @@ class DIDSigner extends Component {
               mode="json"
               theme="github"
               style={{ width: '100%' }}
-              onChange={newValue => {
+              onChange={(newValue) => {
                 this.setState({
-                  jsonEditorValue: newValue
+                  jsonEditorValue: newValue,
                 });
               }}
               name="signatureEditor"
@@ -157,9 +157,9 @@ class DIDSigner extends Component {
                   label="DID"
                   value={did}
                   placeholder={'Enter your DID here.'}
-                  onChange={event => {
+                  onChange={(event) => {
                     this.setState({
-                      did: event.target.value
+                      did: event.target.value,
                     });
                   }}
                   fullWidth
@@ -170,7 +170,7 @@ class DIDSigner extends Component {
 
               <FormControl variant="outlined" fullWidth>
                 <InputLabel
-                  ref={ref => {
+                  ref={(ref) => {
                     this.InputLabelRef = ref;
                   }}
                   htmlFor="outlined-age-simple"
@@ -179,9 +179,9 @@ class DIDSigner extends Component {
                 </InputLabel>
                 <Select
                   value={this.state.kid}
-                  onChange={event => {
+                  onChange={(event) => {
                     this.setState({
-                      kid: event.target.value
+                      kid: event.target.value,
                     });
                   }}
                   input={
@@ -195,7 +195,7 @@ class DIDSigner extends Component {
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
-                  {Object.keys(data.keys).map(kid => (
+                  {Object.keys(data.keys).map((kid) => (
                     <MenuItem key={kid} value={kid}>
                       {`${kid.substring(0, 8)}...`}
                     </MenuItem>
@@ -215,7 +215,7 @@ DIDSigner.propTypes = {
   payload: PropTypes.string.isRequired,
   sign: PropTypes.func.isRequired,
   snackbarMessage: PropTypes.func.isRequired,
-  history: PropTypes.any.isRequired
+  history: PropTypes.any.isRequired,
 };
 
 export default DIDSigner;

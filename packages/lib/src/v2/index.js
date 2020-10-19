@@ -1,3 +1,3 @@
-const func = require("./func");
+const func = require('./func');
 
 module.exports = func;

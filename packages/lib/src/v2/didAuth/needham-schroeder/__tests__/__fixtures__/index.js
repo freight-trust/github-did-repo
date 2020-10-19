@@ -1,8 +1,8 @@
-const A = require("./A");
-const B = require("./B");
+const A = require('./A');
+const B = require('./B');
 
 const resolver = {
-  resolve: did => {
+  resolve: (did) => {
     if (did === A.did.id) {
       return A.did;
     }
@@ -10,11 +10,11 @@ const resolver = {
     if (did === B.did.id) {
       return B.did;
     }
-  }
+  },
 };
 
 module.exports = {
   A,
   B,
-  resolver
+  resolver,
 };

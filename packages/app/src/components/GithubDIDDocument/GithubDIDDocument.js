@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 import {
-  Paper, Button, Grid, TextField, FormControl, Typography,
+  Paper,
+  Button,
+  Grid,
+  TextField,
+  FormControl,
+  Typography,
 } from '@material-ui/core';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
@@ -11,7 +16,7 @@ import QRCode from 'qrcode.react';
 
 import { ExpansionPanelList } from '../index';
 
-const styles = theme => ({
+const styles = (theme) => ({
   container: {
     padding: theme.spacing.unit * 2,
     width: '100%',
@@ -39,7 +44,7 @@ class GithubDIDDocument extends Component {
               Public Keys
             </Typography>
             <ExpansionPanelList
-              panels={didDocument.publicKey.map(k => ({
+              panels={didDocument.publicKey.map((k) => ({
                 title: `${k.id} ${k.type}`,
                 children: (
                   <form noValidate autoComplete="off" style={{ width: '100%' }}>
@@ -83,7 +88,11 @@ class GithubDIDDocument extends Component {
                           });
                         }}
                       >
-                        <Button style={{ marginTop: '28px' }} fullWidth variant="contained">
+                        <Button
+                          style={{ marginTop: '28px' }}
+                          fullWidth
+                          variant="contained"
+                        >
                           Copy Public Key ID
                         </Button>
                       </CopyToClipboard>
@@ -102,7 +111,11 @@ class GithubDIDDocument extends Component {
                           });
                         }}
                       >
-                        <Button style={{ marginTop: '28px' }} fullWidth variant="contained">
+                        <Button
+                          style={{ marginTop: '28px' }}
+                          fullWidth
+                          variant="contained"
+                        >
                           Copy Public Key
                         </Button>
                       </CopyToClipboard>
@@ -115,14 +128,21 @@ class GithubDIDDocument extends Component {
 
             {didDocument.service && didDocument.service.length ? (
               <div>
-                <Typography variant={'body2'} className={classes.publicKeysHeading}>
+                <Typography
+                  variant={'body2'}
+                  className={classes.publicKeysHeading}
+                >
                   Service
                 </Typography>
                 <ExpansionPanelList
-                  panels={didDocument.service.map(k => ({
+                  panels={didDocument.service.map((k) => ({
                     title: `${k.id}`,
                     children: (
-                      <form noValidate autoComplete="off" style={{ width: '100%' }}>
+                      <form
+                        noValidate
+                        autoComplete="off"
+                        style={{ width: '100%' }}
+                      >
                         <FormControl fullWidth disabled>
                           <TextField
                             label="id"
@@ -153,7 +173,11 @@ class GithubDIDDocument extends Component {
                               });
                             }}
                           >
-                            <Button style={{ marginTop: '28px' }} fullWidth variant="contained">
+                            <Button
+                              style={{ marginTop: '28px' }}
+                              fullWidth
+                              variant="contained"
+                            >
                               Copy Service Endpoint
                             </Button>
                           </CopyToClipboard>
@@ -169,7 +193,10 @@ class GithubDIDDocument extends Component {
           </Grid>
 
           <Grid item xs={12} sm={4}>
-            <QRCode value={didDocument.id} style={{ width: '128px', height: '128px' }} />
+            <QRCode
+              value={didDocument.id}
+              style={{ width: '128px', height: '128px' }}
+            />
           </Grid>
         </Grid>
       </Paper>

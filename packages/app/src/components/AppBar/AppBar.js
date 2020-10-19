@@ -15,7 +15,7 @@ import DrawerContent from './DrawerContent';
 
 const drawerWidth = 240;
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: 'flex',
   },
@@ -53,7 +53,7 @@ class ResponsiveDrawer extends React.Component {
   };
 
   handleDrawerToggle = () => {
-    this.setState(state => ({ mobileOpen: !state.mobileOpen }));
+    this.setState((state) => ({ mobileOpen: !state.mobileOpen }));
   };
 
   render() {

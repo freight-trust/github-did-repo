@@ -14,7 +14,9 @@ class NotFound extends Component {
 
         <div className="copy">
           <Typography variant="h1">404</Typography>
-          <Typography variant="h4">{window.location.pathname} page not found.</Typography>
+          <Typography variant="h4">
+            {window.location.pathname} page not found.
+          </Typography>
           <Button
             variant="contained"
             onClick={() => {

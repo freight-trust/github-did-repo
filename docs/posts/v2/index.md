@@ -1,7 +1,7 @@
 ---
 title: V2... Even More Centralized
-date: "2019-05-14T22:12:03.284Z"
-image: "/imgs/micro_8.jpg"
+date: '2019-05-14T22:12:03.284Z'
+image: '/imgs/micro_8.jpg'
 ---
 
 We've done a major rewrite in an attempt to simplify the setup process, and clarify how centralized and dependant on GitHub this method really is.
@@ -18,7 +18,7 @@ GitHub DID method should be used mostly for testing and development, and its ris
 
 > GitHub DID is centralized, github.com is the root of trust, and repo permissions MUST be considered when deciding whether a DID Document should be trusted.
 
-That being said, git has a lot of nice features that are in the family of features used to build truley decentralized identifiers, and there is a lot of interesting work around git    (small g... the software) / git-like protocols and DIDs.
+That being said, git has a lot of nice features that are in the family of features used to build truley decentralized identifiers, and there is a lot of interesting work around git (small g... the software) / git-like protocols and DIDs.
 
 #### [Toward scalable decentralized identifier systems](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Toward-scalable-decentralized-identifier-systems/ba-p/560168)
 
@@ -26,7 +26,7 @@ That being said, git has a lot of nice features that are in the family of featur
 
 ### Whats new in "v2"
 
-There is no official release yet... 
+There is no official release yet...
 
 ##### New DID format: did:github:USERNAME
 
@@ -54,4 +54,3 @@ We provide a REST API which can be used to resolve GitHub DIDs, but we'd like to
 #### RSA / ECC Signature Suite Demos
 
 We would like to add some other key types to support interoperability with other DID Methods, especially ones that use `secp256k1` curve, used by Bitcoin and Ethereum.
-

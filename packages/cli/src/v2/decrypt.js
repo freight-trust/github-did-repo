@@ -6,13 +6,15 @@ module.exports = (vorpal) => {
   vorpal
     .command(
       'decrypt <password> <pathToFile> <pathToOutFile>',
-      'decrypt JSON-LD from a did key to a did key.',
+      'decrypt JSON-LD from a did key to a did key.'
     )
     .types({ string: ['_'] })
     .action(async ({ password, pathToFile, pathToOutFile }) => {
       const payload = JSON.parse(fse.readFileSync(path.resolve(pathToFile)));
 
-      const encrypedWebWallet = fse.readFileSync(vorpal.webWalletFilePath).toString();
+      const encrypedWebWallet = fse
+        .readFileSync(vorpal.webWalletFilePath)
+        .toString();
       const wallet = ghdid.createWallet(encrypedWebWallet);
       wallet.unlock(password);
 
@@ -24,7 +26,10 @@ module.exports = (vorpal) => {
         resolver: ghdid.resolver,
       });
 
-      await fse.outputFile(path.resolve(pathToOutFile), JSON.stringify(decryptedPaylaod, null, 2));
+      await fse.outputFile(
+        path.resolve(pathToOutFile),
+        JSON.stringify(decryptedPaylaod, null, 2)
+      );
 
       await vorpal.logger.log({
         level: 'info',

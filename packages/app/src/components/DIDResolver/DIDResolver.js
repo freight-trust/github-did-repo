@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import {
-  Button, Grid, TextField, CircularProgress,
-} from '@material-ui/core';
+import { Button, Grid, TextField, CircularProgress } from '@material-ui/core';
 
 import { GithubDIDDocument } from '../index';
 
-const styles = theme => ({
+const styles = (theme) => ({
   progress: {
     margin: `${theme.spacing.unit * 2}px auto`,
   },

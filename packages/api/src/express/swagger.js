@@ -17,7 +17,10 @@ module.exports = (app) => {
       basePath: getBasePath(),
     },
     // Path to the API docs
-    apis: ['./src/express/routes/**/*/index.js', './src/express/routes/.well-known/webfinger.js'],
+    apis: [
+      './src/express/routes/**/*/index.js',
+      './src/express/routes/.well-known/webfinger.js',
+    ],
   });
 
   app.get('/api/v1/swagger.json', (req, res) => {
@@ -44,6 +47,6 @@ module.exports = (app) => {
     swaggerUi.setup(null, {
       swaggerUrl: `${getAPIBaseUrl()}/swagger.json`,
       explorer: true,
-    }),
+    })
   );
 };

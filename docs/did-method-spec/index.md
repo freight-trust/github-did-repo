@@ -23,6 +23,7 @@ Example: `did:github:gjgd`
 ### Create
 
 In order to create a Github DID, a Github user MUST:
+
 - Create a repo named `ghdid`
 - Create a valid did document named `index.jsonld`
 - Push the document on the `master` branch
@@ -32,6 +33,7 @@ In order to create a Github DID, a Github user MUST:
 In order to resolve a `did:github:USERNAME`, you MUST read the `index.jsonld` document on the `master` branch of the `ghdid` repository of the user USERNAME
 
 As a shortcut, a user MAY resolve the following URL:
+
 ```
 https://raw.githubusercontent.com/USERNAME/ghdid/master/index.jsonld
 ```
@@ -47,4 +49,4 @@ In order to delete a did document, a Github MUST delete the `index.jsonld` file 
 ## Security and privacy considerations
 
 1. This method relies on trusting Github's for resolving DID Documents
-2. This method relies on trusting Github's for authenticating updates to a did document, but a user MAY chose to use Linked Data Signatures via the `proof` field of their did document for a strong verifiable cryptographic proof 
+2. This method relies on trusting Github's for authenticating updates to a did document, but a user MAY chose to use Linked Data Signatures via the `proof` field of their did document for a strong verifiable cryptographic proof

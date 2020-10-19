@@ -1,4 +1,3 @@
-
 ## Get started with the CLI
 
 ```
@@ -6,13 +5,16 @@ npm i -g @github-did/cli
 ```
 
 In order to create an empty wallet, run
+
 ```
 ghdid init my-password
 ```
+
 This will create a wallet.json file, encrypted with the provided password
 Check it out at `~/.github-did/wallet.json`
 
 Then add your first openpgp key
+
 ```
 ghdid addKey my-password
 ```
@@ -25,6 +27,7 @@ If you want to hold the keys of several different did documents into the same wa
 ghdid addKey my-password work-did-document
 ghdid addKey my-password perso-did-document
 ```
+
 ## Send encrypted messages
 
 Using the Transmute wallet, you now hold on your machine the private keys associated with your newly created did document, let's use them to send encrypted messages over Slack!
@@ -46,6 +49,7 @@ You're all set!
 ### Send encrypted messages over Slack
 
 First lets create two sets of keys, associated with two did documents:
+
 ```
 $ ghdid addKey my-password from
 

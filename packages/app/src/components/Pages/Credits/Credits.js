@@ -11,7 +11,9 @@ class Credits extends Component {
         <Typography variant="h2">Credits</Typography>
         <br />
         <Typography variant="body1">
-          {'Thanks to the open source projects and assets used to build this demo.'}
+          {
+            'Thanks to the open source projects and assets used to build this demo.'
+          }
         </Typography>
         <br />
 

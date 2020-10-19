@@ -33,7 +33,7 @@ const hashEncrypted = (data) => {
     crypto
       .createHash('sha256')
       .update(base64url.toBuffer(encodedPayload))
-      .digest(),
+      .digest()
   );
 };
 
@@ -45,7 +45,7 @@ class DisplayWallet extends React.Component {
   };
 
   // eslint-disable-next-line
-  handleChange = name => event => {
+  handleChange = (name) => (event) => {
     this.setState({
       isWalletLockDialogOpen: true,
     });
@@ -104,7 +104,10 @@ class DisplayWallet extends React.Component {
                     <FormGroup>
                       <FormControlLabel
                         control={
-                          <Switch checked={walletIsLocked} onChange={this.handleChange('locked')} />
+                          <Switch
+                            checked={walletIsLocked}
+                            onChange={this.handleChange('locked')}
+                          />
                         }
                         label={walletIsLocked ? 'Locked' : 'Unlocked!'}
                       />
@@ -119,22 +122,27 @@ class DisplayWallet extends React.Component {
                     )}
                   </FormControl>
                   <FormControl component="fieldset" disabled>
-                    {!walletIsLocked
-                      && Object.keys(wallet.data.keys).map((kid) => {
+                    {!walletIsLocked &&
+                      Object.keys(wallet.data.keys).map((kid) => {
                         const key = wallet.data.keys[kid];
                         return (
                           <ExpansionPanelList
                             key={kid}
                             panels={[
                               {
-                                title: `${key.tags[0]} ${kid.substring(0, 8)}...`,
+                                title: `${key.tags[0]} ${kid.substring(
+                                  0,
+                                  8
+                                )}...`,
                                 children: (
                                   <div style={{ width: '100%' }}>
-                                    <Typography variant="body2">{key.notes}</Typography>
+                                    <Typography variant="body2">
+                                      {key.notes}
+                                    </Typography>
                                     <br />
 
                                     <div>
-                                      {key.tags.map(t => (
+                                      {key.tags.map((t) => (
                                         <Chip
                                           key={t}
                                           label={t}
@@ -151,7 +159,7 @@ class DisplayWallet extends React.Component {
                                           snackbarMessage: {
                                             message: `Copied Public Key: ${key.publicKey.substring(
                                               0,
-                                              32,
+                                              32
                                             )} ...`,
                                             variant: 'success',
                                             open: true,

@@ -8,7 +8,10 @@ import DisplayWallet from './DisplayWallet';
 class DIDWallet extends Component {
   render() {
     const {
-      importCipherTextWallet, wallet, toggleWallet, snackbarMessage,
+      importCipherTextWallet,
+      wallet,
+      toggleWallet,
+      snackbarMessage,
     } = this.props;
 
     const showInstr = wallet.data == null;
@@ -26,11 +29,13 @@ class DIDWallet extends Component {
             <Grid item xs={12}>
               <Typography variant="h3">Warning</Typography>
               <Typography variant="body2">
-                Be sure to only import your web wallet. It contains a subset of your keys.
+                Be sure to only import your web wallet. It contains a subset of
+                your keys.
               </Typography>
 
               <Typography variant="body2">
-                Make sure you have created your DID before attempting to import a wallet.
+                Make sure you have created your DID before attempting to import
+                a wallet.
               </Typography>
               <br />
 
@@ -48,7 +53,9 @@ class DIDWallet extends Component {
               <br />
             </Grid>
             <Grid item xs={12}>
-              <ImportWalletFileCard importCipherTextWallet={importCipherTextWallet} />
+              <ImportWalletFileCard
+                importCipherTextWallet={importCipherTextWallet}
+              />
             </Grid>
           </Grid>
         )}

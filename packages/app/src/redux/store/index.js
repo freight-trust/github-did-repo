@@ -31,8 +31,11 @@ export default (appReducers) => {
 
   // Store.
   const store = createStore(
-    persistReducer(persistConfig, combineReducers({ ...rootReducer, ...appReducers })),
-    composeWithDevTools(applyMiddleware(thunk, routerMiddleware(history))),
+    persistReducer(
+      persistConfig,
+      combineReducers({ ...rootReducer, ...appReducers })
+    ),
+    composeWithDevTools(applyMiddleware(thunk, routerMiddleware(history)))
   );
 
   // Persistor.

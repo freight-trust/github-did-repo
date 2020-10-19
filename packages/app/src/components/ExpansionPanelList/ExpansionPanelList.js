@@ -7,7 +7,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     width: '100%',
   },
@@ -21,8 +21,8 @@ const styles = theme => ({
 function ExpansionPanelList({ classes, panels }) {
   return (
     <div className={classes.root}>
-      {panels
-        && panels.map(panel => (
+      {panels &&
+        panels.map((panel) => (
           <ExpansionPanel disabled={panel.disabled} key={panel.title}>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={classes.heading}>{panel.title}</Typography>

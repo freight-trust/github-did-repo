@@ -1,12 +1,12 @@
 // https://w3c-ccg.github.io/did-spec/
 
 const keyTypes = [
-  "publicKeyPem",
-  "publicKeyJwk",
-  "publicKeyHex",
-  "publicKeyBase64",
-  "publicKeyBase58",
-  "publicKeyMultibase"
+  'publicKeyPem',
+  'publicKeyJwk',
+  'publicKeyHex',
+  'publicKeyBase64',
+  'publicKeyBase58',
+  'publicKeyMultibase',
 ];
 
 const getPublicKeyFromDIDDoc = (doc, kid) => {

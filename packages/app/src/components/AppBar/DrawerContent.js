@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import Divider from '@material-ui/core/Divider';
 
 import {
-  Home, Code, Star, VpnKey, Fingerprint, Search, Lock,
+  Home,
+  Code,
+  Star,
+  VpnKey,
+  Fingerprint,
+  Search,
+  Lock,
 } from '@material-ui/icons';
 
 import MenuSection from './MenuSection';
