@@ -2,7 +2,7 @@ const express = require('express');
 
 const { getBasePath } = require('../../../config');
 
-const ghdid = require('@github-did/lib');
+const ghdid = require('github-did-library-web3');
 const logger = require('../../../lib/winston');
 
 const router = express.Router();

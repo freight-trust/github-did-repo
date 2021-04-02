@@ -1,4 +1,6 @@
-# @github-did/functions
+
+
+> Note - Use Nodejs 10
 
 Firebase Cloud Functions for GitHub DID
 
