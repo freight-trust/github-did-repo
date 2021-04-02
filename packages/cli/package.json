@@ -1,6 +1,6 @@
 {
   "name": "gh-did-cli-web3",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Ethereum GitHub DID",
   "author": "Orie Steele",
   "license": "Apache-2.0",
