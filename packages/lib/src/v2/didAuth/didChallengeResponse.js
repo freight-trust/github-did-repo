@@ -36,7 +36,7 @@ const verifySignedChallenge = async (
   tokenOrDoc,
   initiatorPublicKey,
   responderPublicKey,
-  ldSignatureSuites = {}
+  ldSignatureSuites = {},
 ) => {
   let payload;
   let challengerSignatureIsValid = false;
@@ -47,7 +47,7 @@ const verifySignedChallenge = async (
     responderSignatureIsValid = !!decoded;
     decoded = await validateToken(
       decoded.did_auth_challenge,
-      initiatorPublicKey
+      initiatorPublicKey,
     );
     challengerSignatureIsValid = !!decoded;
     payload = decoded;
@@ -55,13 +55,13 @@ const verifySignedChallenge = async (
     responderSignatureIsValid = await validateSignature(
       tokenOrDoc,
       responderPublicKey,
-      ldSignatureSuites
+      ldSignatureSuites,
     );
 
     challengerSignatureIsValid = await validateSignature(
       tokenOrDoc.did_auth_challenge,
       initiatorPublicKey,
-      ldSignatureSuites
+      ldSignatureSuites,
     );
     payload = tokenOrDoc.did_auth_challenge;
   }

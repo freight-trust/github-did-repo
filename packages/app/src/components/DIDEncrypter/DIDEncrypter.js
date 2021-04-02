@@ -52,7 +52,7 @@ class DIDEncrypter extends Component {
             givenName: 'Alice',
           },
           null,
-          2
+          2,
         ),
       });
     } else {
@@ -60,7 +60,7 @@ class DIDEncrypter extends Component {
         jsonEditorValue: JSON.stringify(
           JSON.parse(base64url.decode(payload)),
           null,
-          2
+          2,
         ),
       });
     }

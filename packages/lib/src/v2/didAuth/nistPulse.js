@@ -65,7 +65,7 @@ const verify = async (tokenOrDoc, publicKey, ldSignatureSuites = {}) => {
 
 const getLastHourPulse = async () => {
   const lastPulse = await getJson(
-    'https://beacon.nist.gov/beacon/2.0/pulse/last'
+    'https://beacon.nist.gov/beacon/2.0/pulse/last',
   );
   const lastHourPulse = lastPulse.pulse.listValues[1];
   return lastHourPulse;

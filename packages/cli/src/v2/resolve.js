@@ -14,7 +14,7 @@ module.exports = (vorpal) => {
 
       const verified = await ghdid.verifyWithResolver(
         didDocument,
-        ghdid.resolver
+        ghdid.resolver,
       );
 
       await vorpal.logger.log({

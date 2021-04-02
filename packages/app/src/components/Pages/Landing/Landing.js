@@ -97,7 +97,7 @@ class Landing extends Component {
             variant="contained"
             onClick={() => {
               window.open(
-                'https://github.com/decentralized-identity/github-did'
+                'https://github.com/decentralized-identity/github-did',
               );
             }}
           >

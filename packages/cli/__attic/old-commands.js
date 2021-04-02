@@ -32,7 +32,7 @@ vorpal
 
       await fse.outputFile(
         walletFilePath,
-        JSON.stringify(wallet.data, null, 2)
+        JSON.stringify(wallet.data, null, 2),
       );
 
       await fse.outputFile(
@@ -46,8 +46,8 @@ vorpal
             repoUrl,
           },
           null,
-          2
-        )
+          2,
+        ),
       );
       await vorpal.logger.log({
         level: 'info',
@@ -69,7 +69,7 @@ vorpal
       });
     } else {
       const encryptedWalletData = JSON.parse(
-        fse.readFileSync(walletFilePath).toString()
+        fse.readFileSync(walletFilePath).toString(),
       );
       const wallet = new ghdid.TransmuteDIDWallet(encryptedWalletData);
       await wallet.decrypt(password);
@@ -96,7 +96,7 @@ vorpal
         creator: ghdid.constructDIDPublicKeyID(didDocument.data.id, kid),
         privateKey: await ghdid.getUnlockedPrivateKey(
           wallet.data.keystore[kid].data.privateKey,
-          password
+          password,
         ),
       });
 
@@ -107,15 +107,15 @@ vorpal
           '.github-did',
           repo,
           'dids',
-          `${kid}.jsonld`
+          `${kid}.jsonld`,
         ),
         JSON.stringify(
           {
             ...signedDIDDocument,
           },
           null,
-          2
-        )
+          2,
+        ),
       );
       logger.log({
         level: 'info',
@@ -130,12 +130,12 @@ vorpal
       // Update wallet
       await fse.outputFile(
         walletFilePath,
-        JSON.stringify(wallet.data, null, 2)
+        JSON.stringify(wallet.data, null, 2),
       );
       logger.log({
         level: 'info',
         message: `Keys for tag "${tag}" stored in the wallet are\n${kidsByTag.map(
-          (k) => `${k}\n`
+          (k) => `${k}\n`,
         )}`,
       });
     }
@@ -163,12 +163,12 @@ vorpal.command('resolve <did>', 'resolve a ghdid').action(async ({ did }) => {
 vorpal
   .command(
     'sendMessageOnSlack <password> <didFrom> <didTo> <message>',
-    'send an encrypted message on Slack'
+    'send an encrypted message on Slack',
   )
   .action(async ({ password, didFrom, didTo, message }) => {
     // Recover the wallet and get my private key
     const encryptedWalletData = JSON.parse(
-      fse.readFileSync(walletFilePath).toString()
+      fse.readFileSync(walletFilePath).toString(),
     );
     const wallet = new ghdid.TransmuteDIDWallet(encryptedWalletData);
     await wallet.decrypt(password);
@@ -212,7 +212,7 @@ vorpal
 vorpal
   .command(
     'decrypt <password> <payloadPath>',
-    'send an encrypted message on Slack'
+    'send an encrypted message on Slack',
   )
   .action(async ({ password, payloadPath }) => {
     const out = path.resolve(payloadPath);
@@ -226,7 +226,7 @@ vorpal
 
     // Get wallet of recipient
     const encryptedWalletData = JSON.parse(
-      fse.readFileSync(walletFilePath).toString()
+      fse.readFileSync(walletFilePath).toString(),
     );
     const wallet = new ghdid.TransmuteDIDWallet(encryptedWalletData);
     await wallet.decrypt(password);

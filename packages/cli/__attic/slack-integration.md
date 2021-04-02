@@ -10,8 +10,8 @@ In order to create an empty wallet, run
 ghdid init my-password
 ```
 
-This will create a wallet.json file, encrypted with the provided password
-Check it out at `~/.github-did/wallet.json`
+This will create a wallet.json file, encrypted with the provided password Check
+it out at `~/.github-did/wallet.json`
 
 Then add your first openpgp key
 
@@ -19,9 +19,11 @@ Then add your first openpgp key
 ghdid addKey my-password
 ```
 
-The output will be a list of the key ids stored in the wallet, and the did associated with the did document created with that key
+The output will be a list of the key ids stored in the wallet, and the did
+associated with the did document created with that key
 
-If you want to hold the keys of several different did documents into the same wallet, you can use tags
+If you want to hold the keys of several different did documents into the same
+wallet, you can use tags
 
 ```
 ghdid addKey my-password work-did-document
@@ -30,13 +32,18 @@ ghdid addKey my-password perso-did-document
 
 ## Send encrypted messages
 
-Using the Transmute wallet, you now hold on your machine the private keys associated with your newly created did document, let's use them to send encrypted messages over Slack!
+Using the Transmute wallet, you now hold on your machine the private keys
+associated with your newly created did document, let's use them to send
+encrypted messages over Slack!
 
 ### Setting up Slack integration
 
-First, go to: [https://api.slack.com/apps](https://api.slack.com/apps) and select your app (create one if you don't have one)
+First, go to: [https://api.slack.com/apps](https://api.slack.com/apps) and
+select your app (create one if you don't have one)
 
-Then go to incoming webhooks -> Add new webhook to workspace -> Setup the channel you want ghdid cli to publish the encrypted messages in -> Copy the webhook url
+Then go to incoming webhooks -> Add new webhook to workspace -> Setup the
+channel you want ghdid cli to publish the encrypted messages in -> Copy the
+webhook url
 
 Then run
 
@@ -88,9 +95,11 @@ If the Slack integration worked, you should see a message in your Slack channel:
 }
 ```
 
-The payload is the message we send, encrypted using didTo's public key and signed with didFrom private key.
+The payload is the message we send, encrypted using didTo's public key and
+signed with didFrom private key.
 
-In order to decrypt it, you should copy the JSON message and paste it into a file:
+In order to decrypt it, you should copy the JSON message and paste it into a
+file:
 
 ```
 pbpaste > out.json

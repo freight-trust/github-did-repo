@@ -11,7 +11,7 @@ const encrypt = (publicKey, dataBuffer) => {
 const decrypt = (privateKey, base64EncodedBuffer) => {
   const plaintext = crypto.privateDecrypt(
     privateKey,
-    Buffer.from(base64EncodedBuffer, 'base64')
+    Buffer.from(base64EncodedBuffer, 'base64'),
   );
   return JSON.parse(plaintext);
 };
@@ -22,7 +22,7 @@ const authEncrypt = (publicKey, privateKey, payload) => {
       encrypted: encrypt(publicKey, Buffer.from(JSON.stringify(payload))),
     },
     privateKey,
-    { algorithm: 'RS256' }
+    { algorithm: 'RS256' },
   );
   return token;
 };

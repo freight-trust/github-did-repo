@@ -1,5 +1,3 @@
-
-
 > Note - Use Nodejs 10
 
 Firebase Cloud Functions for GitHub DID
@@ -19,7 +17,8 @@ firebase functions:config:set github_did.commit=$(git log -1 --format="%H")
 
 Set RUNTIME_CONFIG_PASSWORD in travis.
 
-Be sure not build PRs, only pushed branches. Make sure you don't merge a PR that exfiltrates RUNTIME_CONFIG_PASSWORD.
+Be sure not build PRs, only pushed branches. Make sure you don't merge a PR that
+exfiltrates RUNTIME_CONFIG_PASSWORD.
 
 See:
 

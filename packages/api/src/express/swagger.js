@@ -47,6 +47,6 @@ module.exports = (app) => {
     swaggerUi.setup(null, {
       swaggerUrl: `${getAPIBaseUrl()}/swagger.json`,
       explorer: true,
-    })
+    }),
   );
 };

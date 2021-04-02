@@ -14,7 +14,7 @@ const wrappedDocumentLoader = () => {
   return async (url) => {
     if (url.startsWith('https://w3id.org/did/v1')) {
       return documentLoader(
-        'https://raw.githubusercontent.com/w3c-ccg/did-spec/gh-pages/contexts/did-v0.11.jsonld'
+        'https://raw.githubusercontent.com/w3c-ccg/did-spec/gh-pages/contexts/did-v0.11.jsonld',
       );
     }
     return documentLoader(url);
@@ -55,7 +55,7 @@ const signDidDocument = async (didDocument) => {
   wallet.unlock(password);
 
   const primaryPublicKey = didDocument.publicKey.find(
-    (pk) => pk.type === 'Ed25519VerificationKey2018'
+    (pk) => pk.type === 'Ed25519VerificationKey2018',
   );
   const [did, kid] = primaryPublicKey.id.split('#');
   const primaryKey = wallet.keys[kid];

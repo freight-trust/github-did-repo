@@ -65,7 +65,7 @@ class DIDSigner extends Component {
             action: 'AuthenticateMe',
           },
           null,
-          2
+          2,
         ),
       });
     } else {
@@ -73,7 +73,7 @@ class DIDSigner extends Component {
         jsonEditorValue: JSON.stringify(
           JSON.parse(base64url.decode(payload)),
           null,
-          2
+          2,
         ),
       });
     }

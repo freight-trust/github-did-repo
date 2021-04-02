@@ -13,7 +13,7 @@ const logger = createLogger({
     format.timestamp({
       format: 'YYYY-MM-DD HH:mm:ss',
     }),
-    json()
+    json(),
   ),
 
   transports: [
@@ -32,10 +32,10 @@ if (process.env.NODE_ENV !== 'production') {
         timestamp(),
         printf(
           (info) =>
-            `${info.timestamp} [${info.label}] ${info.level}: ${info.message}`
-        )
+            `${info.timestamp} [${info.label}] ${info.level}: ${info.message}`,
+        ),
       ),
-    })
+    }),
   );
 }
 

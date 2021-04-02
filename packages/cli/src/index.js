@@ -16,7 +16,7 @@ const walletFilePath = path.resolve(os.homedir(), '.github-did', 'wallet.enc');
 const webWalletFilePath = path.resolve(
   os.homedir(),
   '.github-did',
-  'web.wallet.enc'
+  'web.wallet.enc',
 );
 
 if (fse.existsSync(configPath)) {
@@ -50,8 +50,8 @@ vorpal.command('version', 'display github-did version').action(async () => {
           packageJson.dependencies['@transmute/openpgpsignature2019'],
       },
       null,
-      2
-    )
+      2,
+    ),
   );
   return vorpal.wait(1);
 });

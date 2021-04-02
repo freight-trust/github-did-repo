@@ -6,7 +6,7 @@ module.exports = (vorpal) => {
   vorpal
     .command(
       'decrypt <password> <pathToFile> <pathToOutFile>',
-      'decrypt JSON-LD from a did key to a did key.'
+      'decrypt JSON-LD from a did key to a did key.',
     )
     .types({ string: ['_'] })
     .action(async ({ password, pathToFile, pathToOutFile }) => {
@@ -28,7 +28,7 @@ module.exports = (vorpal) => {
 
       await fse.outputFile(
         path.resolve(pathToOutFile),
-        JSON.stringify(decryptedPaylaod, null, 2)
+        JSON.stringify(decryptedPaylaod, null, 2),
       );
 
       await vorpal.logger.log({

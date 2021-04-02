@@ -6,7 +6,7 @@ module.exports = (vorpal) => {
   vorpal
     .command(
       'exportWebWallet <targetFilePath>',
-      'export your github-did web wallet'
+      'export your github-did web wallet',
     )
 
     .action(async ({ targetFilePath, options }) => {

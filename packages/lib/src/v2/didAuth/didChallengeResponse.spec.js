@@ -64,7 +64,7 @@ describe.skip('DID Auth Challenge Response', () => {
       public_key,
       {
         RsaSignature2017,
-      }
+      },
     );
     expect(verified).toBe(true);
   });
@@ -79,13 +79,13 @@ describe.skip('DID Auth Challenge Response', () => {
       private_key,
       {
         algorithm: 'RS256',
-      }
+      },
     );
 
     const verified = await didAuthChallengeResponse.verifySignedChallenge(
       signedChallenge,
       public_key,
-      public_key
+      public_key,
     );
     expect(verified).toBe(true);
   });

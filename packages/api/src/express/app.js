@@ -22,7 +22,7 @@ app.use('/api/v1/version', require('./routes/version'));
 app.use('/api/v1/did', require('./routes/did'));
 app.use(
   '/api/v1/.well-known/webfinger',
-  require('./routes/.well-known/webfinger')
+  require('./routes/.well-known/webfinger'),
 );
 app.use('/.well-known/webfinger', require('./routes/.well-known/webfinger'));
 

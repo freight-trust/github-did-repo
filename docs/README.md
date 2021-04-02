@@ -1,6 +1,7 @@
 ### About
 
-GitHub DID is an experimental tool for developing and testing the Decentralized Identity, Credentials, Signature Suites and related Cryptography.
+GitHub DID is an experimental tool for developing and testing the Decentralized
+Identity, Credentials, Signature Suites and related Cryptography.
 
 ### [Did Method Specification](./did-method-spec)
 

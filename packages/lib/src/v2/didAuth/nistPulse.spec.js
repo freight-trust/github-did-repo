@@ -56,7 +56,7 @@ describe.skip('DID Auth with Nist Beacon', () => {
       public_key,
       {
         RsaSignature2017,
-      }
+      },
     );
     expect(verified).toBe(true);
   });

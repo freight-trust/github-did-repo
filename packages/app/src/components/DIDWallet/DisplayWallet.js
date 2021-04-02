@@ -33,7 +33,7 @@ const hashEncrypted = (data) => {
     crypto
       .createHash('sha256')
       .update(base64url.toBuffer(encodedPayload))
-      .digest()
+      .digest(),
   );
 };
 
@@ -132,7 +132,7 @@ class DisplayWallet extends React.Component {
                               {
                                 title: `${key.tags[0]} ${kid.substring(
                                   0,
-                                  8
+                                  8,
                                 )}...`,
                                 children: (
                                   <div style={{ width: '100%' }}>
@@ -159,7 +159,7 @@ class DisplayWallet extends React.Component {
                                           snackbarMessage: {
                                             message: `Copied Public Key: ${key.publicKey.substring(
                                               0,
-                                              32
+                                              32,
                                             )} ...`,
                                             variant: 'success',
                                             open: true,

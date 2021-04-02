@@ -6,7 +6,7 @@ module.exports = (vorpal) => {
   vorpal
     .command(
       'encrypt <password> <pathToFile> <pathToOutFile> <fromPublicKeyId> <toPublicKeyId>',
-      'encrypt JSON-LD from a did key to a did key.'
+      'encrypt JSON-LD from a did key to a did key.',
     )
     .types({ string: ['_'] })
     .action(
@@ -41,7 +41,7 @@ module.exports = (vorpal) => {
 
         await fse.outputFile(
           path.resolve(pathToOutFile),
-          JSON.stringify(encryptedPaylaod, null, 2)
+          JSON.stringify(encryptedPaylaod, null, 2),
         );
 
         await vorpal.logger.log({
@@ -49,6 +49,6 @@ module.exports = (vorpal) => {
           message: `${pathToOutFile} created.`,
         });
         return vorpal.wait(1);
-      }
+      },
     );
 };

@@ -67,7 +67,7 @@ module.exports = async (wallet, options) => {
       [...doc.authentication, doc.publicKey[0].id],
       (k) => {
         return k.id || k;
-      }
+      },
     );
   }
 

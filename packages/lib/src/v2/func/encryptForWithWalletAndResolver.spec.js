@@ -25,10 +25,10 @@ describe('encryptForWithWalletAndResolver', () => {
     });
 
     expect(payload.fromPublicKeyId).toBe(
-      'did:example:456#' + fixtures.testWalletKeys[0].kid
+      'did:example:456#' + fixtures.testWalletKeys[0].kid,
     );
     expect(payload.toPublicKeyId).toBe(
-      'did:example:456#' + fixtures.testWalletKeys[0].kid
+      'did:example:456#' + fixtures.testWalletKeys[0].kid,
     );
 
     // console.log(JSON.stringify(payload, null, 2));

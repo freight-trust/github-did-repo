@@ -124,7 +124,7 @@ export default withHandlers({
     try {
       const verified = await ghdid.verifyWithResolver(
         signedData,
-        ghdid.resolver
+        ghdid.resolver,
       );
 
       console.log(verified);

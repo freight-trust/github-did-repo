@@ -8,7 +8,7 @@ module.exports = (vorpal) => {
     .command('sign <password> <pathToFile> <pathToOutFile>', 'sign JSON-LD')
     .action(async ({ password, pathToFile, pathToOutFile }) => {
       const payload = JSON.parse(
-        fse.readFileSync(path.resolve(process.cwd(), pathToFile))
+        fse.readFileSync(path.resolve(process.cwd(), pathToFile)),
       );
       const encrypedWebWallet = fse
         .readFileSync(vorpal.webWalletFilePath)
@@ -20,7 +20,7 @@ module.exports = (vorpal) => {
         os.homedir(),
         '.github-did',
         'ghdid',
-        'index.jsonld'
+        'index.jsonld',
       );
       const rootDID = JSON.parse(fse.readFileSync(rootDIDPath));
       const [did, kid] = rootDID.publicKey[1].id.split('#kid=');
@@ -29,12 +29,12 @@ module.exports = (vorpal) => {
         payload,
         did,
         kid,
-        wallet
+        wallet,
       );
 
       await fse.outputFile(
         path.resolve(process.cwd(), pathToOutFile),
-        JSON.stringify(signedPayload, null, 2)
+        JSON.stringify(signedPayload, null, 2),
       );
 
       await vorpal.logger.log({

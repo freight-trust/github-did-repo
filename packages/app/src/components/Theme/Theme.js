@@ -13,7 +13,7 @@ class Theme extends Component {
       typography: {
         useNextVariants: true,
         fontFamily: ['"Lato"', '"Helvetica"', '"Arial"', 'sans-serif'].join(
-          ','
+          ',',
         ),
         button: {
           fontFamily: ['"Rajdhani"', 'sans-serif'].join(','),

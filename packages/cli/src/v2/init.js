@@ -194,8 +194,8 @@ module.exports = (vorpal) => {
               repoUrl,
             },
             null,
-            2
-          )
+            2,
+          ),
         );
 
         await vorpal.logger.log({
