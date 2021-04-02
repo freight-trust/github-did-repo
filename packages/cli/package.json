@@ -1,7 +1,7 @@
 {
   "name": "gh-did-cli-web3",
-  "version": "0.0.7",
-  "description": "GitHub DID",
+  "version": "0.0.9",
+  "description": "Ethereum GitHub DID",
   "author": "Orie Steele",
   "license": "Apache-2.0",
   "bin": {
@@ -15,16 +15,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/decentralized-identity/github-did.git"
+    "url": "git+https://github.com/freight-trust/github-did.git"
   },
   "bugs": {
     "url": "https://github.com/decentralized-identity/github-did/issues"
   },
-  "homepage": "https://github.com/decentralized-identity/github-did#readme",
+  "homepage": "https://github.com/freight-trust/github-did#readme",
   "dependencies": {
     "@transmute/openpgpsignature2019": "^0.1.1",
     "fs-extra": "^7.0.1",
-    "github-did-library-web3": "^0.0.7",
+    "github-did-library-web3": "^0.0.9",
     "node-fetch": "^2.3.0",
     "openpgp": "^4.4.3",
     "shelljs": "^0.8.3",
