@@ -1,4 +1,6 @@
-# @github-did/lib
+# github-did-library-web3@0.0.9
+
+> fork version
 
 A library for working with DIDs using Github!
 
