@@ -3,6 +3,10 @@
 
 [![Run CI](https://github.com/freight-trust/github-did-repo/actions/workflows/run-ci.yml/badge.svg)](https://github.com/freight-trust/github-did-repo/actions/workflows/run-ci.yml)
 
+## Note: the CLI only works on NodeJS 10!
+
+>  npm i -g github-did-cli
+
 ### [DID method specification](./docs/did-method-spec/index.md)
 
 ### [Website](https://github-did.com)
