@@ -45,7 +45,7 @@ vorpal.command('version', 'display github-did version').action(async () => {
     JSON.stringify(
       {
         '@github-did/cli': version,
-        '@github-did/lib': packageJson.dependencies['@github-did/lib'],
+        'github-did-library-web3': packageJson.dependencies['github-did-library-web3'],
         '@transmute/openpgpsignature2019':
           packageJson.dependencies['@transmute/openpgpsignature2019'],
       },

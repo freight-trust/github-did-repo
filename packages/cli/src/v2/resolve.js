@@ -1,4 +1,4 @@
-const ghdid = require('@github-did/lib');
+const ghdid = require('github-did-library-web3');
 
 module.exports = (vorpal) => {
   vorpal

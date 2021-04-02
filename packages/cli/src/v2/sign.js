@@ -1,4 +1,4 @@
-const ghdid = require('@github-did/lib');
+const ghdid = require('github-did-library-web3');
 const fse = require('fs-extra');
 const path = require('path');
 const os = require('os');
