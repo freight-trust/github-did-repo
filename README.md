@@ -1,11 +1,11 @@
 # GitHub DID
 
-[![Build Status](https://travis-ci.org/decentralized-identity/github-did.svg?branch=master)](https://travis-ci.org/decentralized-identity/github-did)
-[![codecov](https://codecov.io/gh/decentralized-identity/github-did/branch/master/graph/badge.svg)](https://codecov.io/gh/decentralized-identity/github-did)
-[![Docs](https://assets.readthedocs.org/static/projects/badges/passing-flat.svg)](https://docs.github-did.com)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/decentralized-identity/github-did/blob/master/LICENSE)
-[![GitHub forks](https://img.shields.io/github/forks/decentralized-identity/github-did.svg?style=social&label=Fork&maxAge=2592000?style=flat-square)](https://github.com/decentralized-identity/github-did#fork-destination-box)
-[![GitHub stars](https://img.shields.io/github/stars/decentralized-identity/github-did.svg?style=social&label=Star&maxAge=2592000?style=flat-square)](https://github.com/decentralized-identity/github-did/stargazers)
+
+[![Run CI](https://github.com/freight-trust/github-did-repo/actions/workflows/run-ci.yml/badge.svg)](https://github.com/freight-trust/github-did-repo/actions/workflows/run-ci.yml)
+
+## Note: the CLI only works on NodeJS 10!
+
+>  npm i -g github-did-cli
 
 ### [DID method specification](./docs/did-method-spec/index.md)
 
@@ -19,9 +19,11 @@
 
 ## Fork for fixing issues with the following packages, which have been renamed and are on **npm**
 
-github-did-library@0.0.5
+github-did-library@
+github-did-cli@
 
-github-did-cli@0.0.5
+
+
 
 [![GitHub DID](./Logo.png)](https://github-did.com)
 
