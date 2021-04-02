@@ -7,11 +7,11 @@
   "dependencies": {
     "@material-ui/core": "^3.8.3",
     "@material-ui/icons": "^3.0.2",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "base64url": "^3.0.1",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.2.1",
-    "github-did-library-web3": "^0.0.7",
+    "github-did-library-web3": "^0.0.9",
     "history": "^4.7.2",
     "lodash": "^4.17.4",
     "material-auto-rotating-carousel": "^3.0.1",
