@@ -1,8 +1,6 @@
 name: Run CI
 on:
   push:
-    branches:
-      - master
 
 jobs:
   run-tests:
